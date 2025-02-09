@@ -12,7 +12,7 @@ def main():
         if len(command) != 0:
             first_input = command.split()[0]
             if first_input == "echo":
-                print(f"{command[len(first_input):]}")
+                print(f"{command[len(first_input)+1:]}")
         if command == exit_message:
             sys.exit(0)
         
