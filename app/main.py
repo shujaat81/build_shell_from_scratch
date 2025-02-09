@@ -11,7 +11,7 @@ def main():
         command = input()
         if command == exit_message:
             sys.exit(0)
-        print(f"\n{command}")
+        print(f"\n{str(command)}")
         
 
 
