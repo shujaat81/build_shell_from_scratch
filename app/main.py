@@ -11,7 +11,7 @@ def main():
         command = input()
         print(f"{command}: command not found")
         if command == exit_message:
-            sys.exit("0")
+            sys.exit(0)
         
 
 
