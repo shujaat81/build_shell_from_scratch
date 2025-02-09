@@ -10,7 +10,7 @@ def main():
                 break
             case "echo":
                 print(" ".join(args))
-            case "type" if "".join(args) in ["echo", "exit"]:
+            case "type" if "".join(args) in ["echo", "exit", "type"]:
                 print(f"{"".join(args)} is a shell builtin")
             case "type":
                 sys.stdout.write(f"{"".join(args)}: not found\n")           
