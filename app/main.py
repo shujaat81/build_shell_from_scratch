@@ -11,7 +11,8 @@ def main():
             case "echo":
                 print(" ".join(args))
             case default:
-                sys.stdout.write(f"{command}: command not found\n")
+                other = " ".join(args)
+                sys.stdout.write(f"{command} {other}: command not found\n")
     return
 if __name__ == "__main__":
     main()
