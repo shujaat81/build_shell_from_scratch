@@ -9,12 +9,14 @@ def main():
 
         # Wait for user input
         command = input()
+        if command == exit_message:
+            sys.exit(0)
         if len(command) != 0:
             first_input = command.split()[0]
             if first_input == "echo":
                 print(f"{command[len(first_input)+1:]}")
-        if command == exit_message:
-            sys.exit(0)
+            else:
+                print(f"{command}: command not found")
         
 
 
