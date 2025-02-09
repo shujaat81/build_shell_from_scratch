@@ -10,9 +10,12 @@ def main():
                 break
             case "echo":
                 print(" ".join(args))
+            case "type" if "".join(args) in ["echo", "exit"]:
+                print(f"{"".join(args)} is a shell builtin")
+            case "type":
+                sys.stdout.write(f"{"".join(args)}: not found\n")           
             case default:
-                other = " ".join(args)
-                sys.stdout.write(f"{command} {other}: command not found\n")
+                sys.stdout.write(f"{command}: command not found\n")
     return
 if __name__ == "__main__":
     main()
