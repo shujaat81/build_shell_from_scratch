@@ -1,4 +1,6 @@
 import sys
+import shutil
+
 def main():
     while True:
         # Uncomment this block to pass the first stage
@@ -10,10 +12,13 @@ def main():
                 break
             case "echo":
                 print(" ".join(args))
-            case "type" if "".join(args) in ["echo", "exit", "type"]:
-                print(f"{"".join(args)} is a shell builtin")
-            case "type":
-                sys.stdout.write(f"{"".join(args)}: not found\n")           
+            case "type": 
+                if "".join(args) in ["echo", "exit", "type"]:
+                    print(f"{"".join(args)} is a shell builtin")
+                elif path := shutil.which("".join(args)):
+                    print(f"{"".join(args)} is {path}") 
+                else:
+                    sys.stdout.write(f"{"".join(args)}: not found\n")           
             case default:
                 sys.stdout.write(f"{command}: command not found\n")
     return
