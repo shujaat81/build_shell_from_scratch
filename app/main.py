@@ -21,7 +21,7 @@ def main():
                 else:
                     sys.stdout.write(f"{"".join(args)}: not found\n")           
             case default:
-                sys.stdout.write(f"{command}: command not found\n")
+                sys.stdout.write(f"Program was passed 2 args (including program name).\n")
     return
 if __name__ == "__main__":
     main()
