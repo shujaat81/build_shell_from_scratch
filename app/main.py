@@ -1,6 +1,6 @@
 import sys
 import shutil
-import subprocess
+import os
 
 def main():
     while True:
@@ -21,7 +21,10 @@ def main():
                 else:
                     sys.stdout.write(f"{"".join(args)}: not found\n")           
             case default:
-                sys.stdout.write(f"Program was passed 2 args (including program name).\n")
+                if os.path.isfile(command):
+                    os.system(command)
+                else:
+                    print(f"{command}: command not found")
     return
 if __name__ == "__main__":
     main()
